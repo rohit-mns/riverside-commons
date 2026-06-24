@@ -1,0 +1,20 @@
+uuid: 33ef4d53-f8f9-4598-9875-cb44ec7e1d5a
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_class_size
+field_name: field_class_size
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

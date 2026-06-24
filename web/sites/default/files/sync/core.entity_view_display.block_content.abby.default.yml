@@ -1,0 +1,22 @@
+uuid: d6c869e9-e7cc-484a-ba3a-9b74029688ec
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - block_content.type.abby
+    - field.field.block_content.abby.field_nandini
+id: block_content.abby.default
+targetEntityType: block_content
+bundle: abby
+mode: default
+content:
+  field_nandini:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true

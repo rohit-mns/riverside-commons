@@ -1,0 +1,202 @@
+uuid: ed307b8e-47bd-405e-a919-0586bdc5d1ff
+langcode: en-gb
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.program.field_category
+    - field.field.node.program.field_class_size
+    - field.field.node.program.field_description
+    - field.field.node.program.field_end_date
+    - field.field.node.program.field_hero_image
+    - field.field.node.program.field_instructor_bio
+    - field.field.node.program.field_instructor_image
+    - field.field.node.program.field_instructor_name
+    - field.field.node.program.field_instructor_title
+    - field.field.node.program.field_level
+    - field.field.node.program.field_location
+    - field.field.node.program.field_member_price
+    - field.field.node.program.field_schedule
+    - field.field.node.program.field_sessions
+    - field.field.node.program.field_standard_price
+    - field.field.node.program.field_start_date
+    - field.field.node.program.field_summary
+    - field.field.node.program.field_what_s_included
+    - field.field.node.program.field_what_you_ll_learn
+    - node.type.program
+  module:
+    - datetime
+    - options
+    - text
+    - user
+id: node.program.full
+targetEntityType: node
+bundle: program
+mode: full
+content:
+  field_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_class_size:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_end_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_hero_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_instructor_bio:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_instructor_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_instructor_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_instructor_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_level:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_location:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_member_price:
+    type: number_decimal
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_schedule:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_sessions:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_standard_price:
+    type: number_decimal
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_start_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_summary:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_what_s_included:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_what_you_ll_learn:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 19
+    region: content
+hidden:
+  langcode: true

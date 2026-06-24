@@ -1,0 +1,22 @@
+uuid: b10e46df-d62d-4366-a700-296a58308f00
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - psycheme
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: psycheme_help
+theme: psycheme
+region: header
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

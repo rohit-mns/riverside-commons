@@ -1,0 +1,22 @@
+uuid: 1e844399-299f-43f3-9400-d4b9239fb6a7
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - psycheme
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: psycheme_content
+theme: psycheme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

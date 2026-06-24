@@ -1,0 +1,14 @@
+uuid: d41427d0-0e9d-4829-a96a-27cec2c6e249
+langcode: en-gb
+status: true
+dependencies: {  }
+name: Menus
+configEntityTypeId: component
+weight: 0
+items:
+  - block.shortcuts
+  - block.system_menu_block.account
+  - block.system_menu_block.admin
+  - block.system_menu_block.footer
+  - block.system_menu_block.main
+  - block.system_menu_block.tools

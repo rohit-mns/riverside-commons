@@ -1,0 +1,22 @@
+uuid: c57edc21-4616-43f4-a9f9-4b71cf04091d
+langcode: en-gb
+status: true
+dependencies:
+  theme:
+    - psycheme
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: psycheme_primary_local_tasks
+theme: psycheme
+region: header
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

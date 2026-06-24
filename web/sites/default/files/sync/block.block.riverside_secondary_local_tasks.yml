@@ -1,0 +1,22 @@
+uuid: 3c031413-f393-4c0c-99c3-3d9e2fa1210c
+langcode: en-gb
+status: true
+dependencies:
+  theme:
+    - riverside
+_core:
+  default_config_hash: ydSxdq7R66I8UMC460rOzlfzvlUL4VRbdwc6z9DWaUI
+id: riverside_secondary_local_tasks
+theme: riverside
+region: header
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

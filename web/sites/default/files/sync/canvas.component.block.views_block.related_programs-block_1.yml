@@ -1,0 +1,26 @@
+uuid: e4a65c99-a174-40f1-a4a6-10116476a9c2
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - views.view.related_programs
+  module:
+    - views
+active_version: 572746a551a43d28
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'views_block:related_programs-block_1'
+        label: 'Related Programs'
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+label: 'Related Programs'
+id: block.views_block.related_programs-block_1
+provider: views
+source: block
+source_local_id: 'views_block:related_programs-block_1'

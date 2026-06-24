@@ -1,0 +1,20 @@
+uuid: 9bd3a955-8f70-49ab-9157-346d7c11066e
+langcode: en-gb
+status: true
+dependencies:
+  theme:
+    - psycheme
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: psycheme_primary_admin_actions
+theme: psycheme
+region: header
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

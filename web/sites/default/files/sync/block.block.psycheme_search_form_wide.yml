@@ -1,0 +1,23 @@
+uuid: 59bce679-c6e2-49cc-bdcb-970692f8d338
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - psycheme
+_core:
+  default_config_hash: pbbed0hdqGDF-_QWVVTWRAwgDIotFuAvWH5mWUZu0fA
+id: psycheme_search_form_wide
+theme: psycheme
+region: header
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: null
+visibility: {  }

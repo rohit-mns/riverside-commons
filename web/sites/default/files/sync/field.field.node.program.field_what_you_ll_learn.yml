@@ -1,0 +1,22 @@
+uuid: 8307c35c-c8a1-48b0-9db7-ff3a2a9745af
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_what_you_ll_learn
+    - node.type.program
+  module:
+    - text
+id: node.program.field_what_you_ll_learn
+field_name: field_what_you_ll_learn
+entity_type: node
+bundle: program
+label: "What You'll Learn"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

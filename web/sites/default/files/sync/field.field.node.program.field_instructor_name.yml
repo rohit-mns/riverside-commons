@@ -1,0 +1,19 @@
+uuid: 4c6061a6-87ad-4e78-bf9a-ff16d16e97cb
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_instructor_name
+    - node.type.program
+id: node.program.field_instructor_name
+field_name: field_instructor_name
+entity_type: node
+bundle: program
+label: 'Instructor Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+uuid: d225c5e1-484d-4185-9c3c-0cef54944bab
+langcode: en-gb
+status: true
+dependencies:
+  theme:
+    - psycheme
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: psycheme_page_title
+theme: psycheme
+region: header
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }
