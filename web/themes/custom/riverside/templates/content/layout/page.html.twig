@@ -1,0 +1,98 @@
+{% set current_path = path('<current>') %}
+{% set path_parts = current_path|split('/') %}
+{% set active_category = path_parts[2] is defined ? path_parts[2] : null %}
+
+<header class="site-header">
+  <a class="site-logo" href="/">Riverside Commons</a>
+
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+    Menu
+  </button>
+
+  <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+    <a href="/programs">Programs</a>
+    <a href="#">About</a>
+    <a href="#">Get Involved</a>
+    <a href="#">Events</a>
+    <a href="#">Contact</a>
+    <a class="button button--dark" href="#">Donate</a>
+  </nav>
+</header>
+
+<main class="site-main">
+
+  {% if current_path starts with '/programs' %}
+    <section class="programs-intro">
+      <h1>Programs</h1>
+      <p>Classes, open studios, exhibitions, and workshops — something for every age and skill level.</p>
+
+      <div class="programs-pills">
+        <a class="{{ current_path == '/programs' ? 'is-active' : '' }}" href="/programs">
+          All programs
+        </a>
+        <a class="{{ active_category == '1' ? 'is-active' : '' }}" href="/programs/1">
+          Studio Classes
+        </a>
+        <a class="{{ active_category == '2' ? 'is-active' : '' }}" href="/programs/2">
+          Open Studios
+        </a>
+        <a class="{{ active_category == '3' ? 'is-active' : '' }}" href="/programs/3">
+          Exhibitions
+        </a>
+        <a class="{{ active_category == '4' ? 'is-active' : '' }}" href="/programs/4">
+          Youth Workshops
+        </a>
+      </div>
+<p class="programs-count">Showing {{ programs_count }} of {{ programs_total }} programs</p>
+    </section>
+  {% endif %}
+
+  {{ page.content }}
+
+  {% if current_path starts with '/programs' %}
+    <section class="programs-cta">
+      <h2>Not sure where to start?</h2>
+      <p>Become a member for open-studio access and member pricing on every class.</p>
+      <a href="#" class="programs-cta__button">Become a Member</a>
+    </section>
+  {% endif %}
+
+</main>
+
+<footer class="site-footer">
+  <div>
+    <strong>Riverside Commons</strong>
+    <p>14 Mill Street</p>
+    <p>Riverfront District</p>
+    <p>Open Tue–Sun</p>
+  </div>
+
+  <div>
+    <strong>Programs</strong>
+    <p>Classes</p>
+    <p>Open Studios</p>
+    <p>Exhibitions</p>
+    <p>Youth Workshops</p>
+  </div>
+
+  <div>
+    <strong>About</strong>
+    <p>Our story</p>
+    <p>Resident artists</p>
+    <p>Visit</p>
+    <p>Press</p>
+  </div>
+
+  <div>
+    <strong>Get Involved</strong>
+    <p>Membership</p>
+    <p>Donate</p>
+    <p>Volunteer</p>
+    <p>Contact</p>
+  </div>
+
+  <div class="site-footer__bottom">
+    <span>© 2026 Riverside Commons</span>
+    <span>Instagram · Facebook · Newsletter</span>
+  </div>
+</footer>

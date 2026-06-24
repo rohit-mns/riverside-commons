@@ -1,0 +1,8 @@
+name: Riverside
+type: theme
+description: Custom frontend theme for Riverside Commons assignment.
+core_version_requirement: ^11
+base theme: olivero
+
+libraries:
+  - riverside/global

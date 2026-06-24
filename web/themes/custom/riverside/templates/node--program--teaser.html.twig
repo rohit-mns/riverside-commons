@@ -1,0 +1,17 @@
+{% set image %}
+  {{ content.field_hero_image }}
+{% endset %}
+
+{% set category = '' %}
+{% if node.field_category.entity %}
+  {% set category = node.field_category.entity.label %}
+{% endif %}
+
+{{ include('riverside:program-card', {
+  title: label,
+  url: url,
+  image: image,
+  category: category,
+  summary: node.field_summary.value|default(''),
+  meta: program_meta|default('')
+}, with_context = false) }}

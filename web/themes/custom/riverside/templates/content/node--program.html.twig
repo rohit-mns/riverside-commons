@@ -1,0 +1,120 @@
+<article class="program-detail">
+<div class="program-detail__breadcrumb">
+  <a href="/programs">Programs</a>
+  <span>/</span>
+
+  {% if node.field_category.entity %}
+    <a href="/programs/{{ node.field_category.entity.id }}">
+      {{ node.field_category.entity.label }}
+    </a>
+    <span>/</span>
+  {% endif %}
+
+  <span>{{ label }}</span>
+</div>
+
+  <div class="program-detail__tag">
+    {{ content.field_category }}
+  </div>
+
+  <h1 class="program-detail__title">{{ label }}</h1>
+
+  <p class="program-detail__summary">
+    {{ node.field_summary.value }}
+  </p>
+
+  <div class="program-detail__layout">
+    <div class="program-detail__main">
+      <div class="program-detail__image">
+        {{ content.field_hero_image }}
+      </div>
+
+      <section class="program-detail__section">
+        <h2>About this class</h2>
+        {{ node.field_description.value|raw }}
+      </section>
+
+      {% if node.field_what_you_ll_learn.value %}
+        <section class="program-detail__section">
+          <h2>What you'll learn</h2>
+          {{ node.field_what_you_ll_learn.value|raw }}
+        </section>
+      {% endif %}
+
+      {% if node.field_what_s_included.value %}
+        <section class="program-detail__section">
+          <h2>What's included</h2>
+          {{ node.field_what_s_included.value|raw }}
+        </section>
+      {% endif %}
+
+      <section class="program-detail__section">
+        <h2>Your instructor</h2>
+
+        <div class="program-detail__instructor">
+          <div class="program-detail__instructor-image">
+            {{ content.field_instructor_image }}
+          </div>
+
+          <div class="program-detail__instructor-content">
+            <strong>{{ node.field_instructor_name.value }}</strong>
+
+            {% if node.field_instructor_title.value %}
+              <p>{{ node.field_instructor_title.value }}</p>
+            {% endif %}
+
+            {% if node.field_instructor_bio.value %}
+              <div>{{ node.field_instructor_bio.value|raw }}</div>
+            {% endif %}
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="program-detail__sidebar">
+      <h2>${{ node.field_standard_price.value }}</h2>
+
+      <p class="program-detail__member-price">
+        member price ${{ node.field_member_price.value }}
+      </p>
+
+      <dl>
+        <dt>Level</dt>
+        <dd>{{ node.field_level.value }}</dd>
+
+        <dt>Schedule</dt>
+        <dd>{{ node.field_schedule.value }}</dd>
+
+        <dt>Dates</dt>
+        <dd>{{ node.field_dates.value }}</dd>
+
+        <dt>Sessions</dt>
+        <dd>{{ node.field_sessions.value }} classes</dd>
+
+        <dt>Class size</dt>
+        <dd>{{ node.field_class_size.value }} students max</dd>
+
+        <dt>Location</dt>
+        <dd>{{ node.field_location.value }}</dd>
+      </dl>
+
+      <a href="#" class="program-detail__button">
+        Register
+      </a>
+
+      <a href="#" class="program-detail__wishlist">
+        Add to wishlist
+      </a>
+
+      <p class="program-detail__note">
+        Free cancellation up to 7 days before the first class.
+      </p>
+    </aside>
+  </div>
+
+  <section class="program-detail__related">
+    <h2>More {{ node.field_category.entity.label }} programs</h2>
+    {{ drupal_view('related_programs', 'block_1', node.field_category.target_id, node.id()) }}
+  </section>
+
+</article>

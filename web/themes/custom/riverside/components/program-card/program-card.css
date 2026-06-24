@@ -1,0 +1,61 @@
+.program-card {
+  background: #fff;
+  border: 1px solid #e5ded6;
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.program-card__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.program-card__media {
+  height: 160px;
+  overflow: hidden;
+}
+
+.program-card__media img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  min-height: 170px;
+}
+
+
+.program-card__category {
+  color: #9b4f36;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.program-card__title {
+  margin: 0 0 12px;
+  font-size: 20px;
+  line-height: 1.25;
+  min-height: 60px
+}
+.program-card__link:hover .program-card__title {
+  color: #1a6eb5;
+  transition: color 0.2s ease;
+}
+.program-card__summary {
+  color: #5f5a55;
+  font-size: 16px;
+  line-height: 1.45;
+  min-height: 95px;
+  margin-bottom: 14px;
+}
+
+.program-card__meta {
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 700;
+}

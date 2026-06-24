@@ -1,0 +1,81 @@
+<?php
+
+use Drupal\node\NodeInterface;
+use Drupal\views\Views;
+
+function riverside_preprocess_node(array &$variables): void {
+  $node = $variables['node'] ?? NULL;
+
+  if (!$node instanceof NodeInterface || $node->bundle() !== 'program') {
+    return;
+  }
+
+  $weeks = '';
+  $schedule = '';
+  $price = '';
+  $level = '';
+  $sessions = '';
+
+  if (
+    $node->hasField('field_start_date') &&
+    $node->hasField('field_end_date') &&
+    !$node->get('field_start_date')->isEmpty() &&
+    !$node->get('field_end_date')->isEmpty()
+  ) {
+    $start = new DateTime($node->get('field_start_date')->value);
+    $end = new DateTime($node->get('field_end_date')->value);
+    $diff = $start->diff($end);
+    $weeks = max(1, (int) ceil($diff->days / 7)) . ' weeks';
+  }
+
+  if ($node->hasField('field_schedule') && !$node->get('field_schedule')->isEmpty()) {
+    $schedule = $node->get('field_schedule')->value;
+  }
+
+  if ($node->hasField('field_level') && !$node->get('field_level')->isEmpty()) {
+    $level_value = $node->get('field_level')->value;
+    $allowed_values = $node->getFieldDefinition('field_level')->getSetting('allowed_values');
+    $level = $allowed_values[$level_value] ?? ucfirst(str_replace('_', ' ', $level_value));
+  }
+
+  if ($node->hasField('field_sessions') && !$node->get('field_sessions')->isEmpty()) {
+    $sessions = $node->get('field_sessions')->value . ' sessions';
+  }
+
+  if ($node->hasField('field_standard_price') && !$node->get('field_standard_price')->isEmpty()) {
+    $price = '$' . rtrim(rtrim(number_format((float) $node->get('field_standard_price')->value, 2), '0'), '.');
+  }
+
+  $meta_parts = array_filter([$weeks, $schedule, $price]);
+  $detail_meta_parts = array_filter([$level, $weeks, $sessions]);
+
+  $variables['program_meta'] = implode(' · ', $meta_parts);
+  $variables['program_detail_meta'] = implode(' · ', $detail_meta_parts);
+}
+
+function riverside_preprocess_page(array &$variables): void {
+  $current_path = \Drupal::service('path.current')->getPath();
+
+  if (strpos($current_path, '/programs') === 0) {
+    $path_parts = explode('/', ltrim($current_path, '/'));
+    // path_parts[0] = 'programs', path_parts[1] = '1' ya NULL
+    $category_id = isset($path_parts[1]) && $path_parts[1] !== '' ? $path_parts[1] : NULL;
+
+    $view = Views::getView('programs');
+
+    if ($view) {
+      $view->setDisplay('page_1');
+
+      if ($category_id) {
+        $view->setArguments([$category_id]);
+      }
+
+      $view->execute();
+      $total = $view->total_rows;
+      $filtered = count($view->result);
+
+      $variables['programs_count'] = $filtered;
+      $variables['programs_total'] = $total;
+    }
+  }
+}

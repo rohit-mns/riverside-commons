@@ -1,0 +1,22 @@
+name: Program Card
+status: stable
+description: Reusable program card for program teasers.
+props:
+  type: object
+  properties:
+    title:
+      type: string
+    url:
+      type: string
+    image:
+      type: string
+    category:
+      type: string
+    summary:
+      type: string
+    meta:
+      type: string
+libraryOverrides:
+  css:
+    component:
+      program-card.css: {}

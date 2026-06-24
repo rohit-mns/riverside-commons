@@ -1,0 +1,25 @@
+<article class="program-card">
+  <a class="program-card__link" href="{{ url }}" aria-label="View {{ title }}">
+    {% if image %}
+      <div class="program-card__media">
+        {{ image|raw }}
+      </div>
+    {% endif %}
+
+    <div class="program-card__content">
+      {% if category %}
+        <div class="program-card__category">{{ category }}</div>
+      {% endif %}
+
+      <h3 class="program-card__title">{{ title }}</h3>
+
+      {% if summary %}
+        <p class="program-card__summary">{{ summary }}</p>
+      {% endif %}
+
+      {% if meta %}
+        <p class="program-card__meta">{{ meta }}</p>
+      {% endif %}
+    </div>
+  </a>
+</article>
